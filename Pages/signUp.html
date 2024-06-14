@@ -24,16 +24,24 @@
     <div id="swipercontainer"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- swiper End -->
+
+         <!-- footer Start -->
+<div id="footercontainer"></div>
+<!-- footer End -->
 </body>
 <script type="module">
-    import swiperHTML from '/components/swiper.js';
-    import navbar_RE from '/components/navbar.js';
+             import swiperHTML from '/components/swiper.js';
+  import navbar_RE from '/components/navbar.js';
+  import footer_RE from '/components/footer.js'
 
-    const swipercontainer = document.getElementById('swipercontainer');
-    const navbarContainer = document.getElementById('navbarContainer');
+  const swipercontainer = document.getElementById('swipercontainer');
+  const navbarContainer = document.getElementById('navbarContainer');
+  const footercontainer = document.getElementById('footercontainer');
 
-    swipercontainer.innerHTML = swiperHTML();
-    navbarContainer.innerHTML = navbar_RE();
+
+  swipercontainer.innerHTML = swiperHTML();
+  navbarContainer.innerHTML = navbar_RE();
+  footercontainer.innerHTML=footer_RE();
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         centeredSlides: true,
