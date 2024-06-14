@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikes In India | New Bikes 2024 | Royal Enfield India</title>
+    <link rel="shortcut icon" href="/Images/royalEnfield_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/styles/swiper.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- navbar start -->
+    <div id="navbarContainer">
+
+    </div>
+    <!-- navbar End -->
+
+    <!-- swiper start -->
+    <div id="swipercontainer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- swiper End -->
+</body>
+<script type="module">
+    import swiperHTML from '/components/swiper.js';
+    import navbar_RE from '/components/navbar.js';
+
+    const swipercontainer = document.getElementById('swipercontainer');
+    const navbarContainer = document.getElementById('navbarContainer');
+
+    swipercontainer.innerHTML = swiperHTML();
+    navbarContainer.innerHTML = navbar_RE();
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+</html>

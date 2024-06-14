@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikes In India | New Bikes 2024 | Royal Enfield India</title>
+    <link
+      rel="shortcut icon"
+      href="/Images/royalEnfield_logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <script src="/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/styles/swiper.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow-x: hidden;
+        background-color: black;
+      }
+
+      .RE_news_img {
+        width: 320px;
+        height: auto;
+        margin: 0px;
+        transition: transform 0.3s ease;
+      }
+
+      .RE_news_img {
+        transform: scale(1.01);
+      }
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 767px) {
+        .image-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Container for tab navigation */
+      .tab-container {
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .tablinks {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            margin: 10px;
+            display: inline-block;
+            border: 1.5px dotted rgb(255, 0, 0);
+            border-radius: 15px;
+        }
+
+        .tablinks.active {
+            color: red;
+            font-size: 18px;
+            font-weight: 600;
+            border: 1.5px dotted white;
+            border-radius: 15px;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            margin-top: -1px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar start -->
+    <div id="navbarContainer"></div>
+    <!-- navbar end -->
+   
+
+    <!-- swiper start -->
+    <div id="swipercontainer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- swiper End -->
+
+    <!-- news_RE_container_start -->
+    <div class="container-fluid">
+      <div
+        style="
+          width: 100vw;
+          height: 100%;
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <p class="h3 text-white">News And Media</p>
+      </div>
+
+      <div class="image-container">
+        <img class="RE_news_img" src="/Images/RE_news_img_1.jpg" alt="" />
+
+        <img class="RE_news_img" src="/Images/RE_news_img_2.jpg" alt="" />
+
+        <img class="RE_news_img" src="/Images/RE_news_img_3.jpg" alt="" />
+
+        <img class="RE_news_img" src="/Images/RE_news_img_4.jpg" alt="" />
+      </div>
+    </div>
+    <!-- news_RE_container_End -->
+
+    <!-- motorcycles -->
+    <div
+      style="
+        width: 100vw;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <p class="h3 text-white">Motorcycles</p>
+    </div>
+    <div class="tab-container">
+      <div class="tablinks" data-tab-id="tab1" onclick="openTab(event, 'tab1')">Shot Gun 650</div>
+      <div class="tablinks" data-tab-id="tab2" onclick="openTab(event, 'tab2')">New Himalayan</div>
+      <div class="tablinks" data-tab-id="tab3" onclick="openTab(event, 'tab3')">Bullet 350</div>
+      <div class="tablinks" data-tab-id="tab4" onclick="openTab(event, 'tab4')">Interceptor</div>
+      <div class="tablinks" data-tab-id="tab5" onclick="openTab(event, 'tab5')">Continental GT</div>
+      <div class="tablinks" data-tab-id="tab6" onclick="openTab(event, 'tab6')">Super Meteor 650</div>
+      <div class="tablinks" data-tab-id="tab7" onclick="openTab(event, 'tab7')">Hunter 350</div>
+      <div class="tablinks" data-tab-id="tab8" onclick="openTab(event, 'tab8')">Scram 411</div>
+      <div class="tablinks" data-tab-id="tab9" onclick="openTab(event, 'tab9')">Classic</div>
+      <div class="tablinks" data-tab-id="tab10" onclick="openTab(event, 'tab10')">Meteor 350</div>
+
+      <div id="tab1" class="tabcontent">
+          <img class="img-fluid" src="Images/shotgun-650-motorcycle.jpg" alt="" />
+      </div>
+      <div id="tab2" class="tabcontent">
+          <img class="img-fluid" src="Images/himalayan-home-motorcycle.jpg" alt="" />
+      </div>
+      <div id="tab3" class="tabcontent">
+          <img class="img-fluid" src="Images/bullet-350-new.jpg" alt="" />
+      </div>
+      <div id="tab4" class="tabcontent">
+          <img class="img-fluid" src="Images/interceptor_650_motorcycle.jpg" alt="" />
+      </div>
+      <div id="tab5" class="tabcontent">
+          <img class="img-fluid" src="Images/continental_gt_650_motorcycle.jpg" alt="" />
+      </div>
+      <div id="tab6" class="tabcontent">
+          <img class="img-fluid" src="Images/super-meteor-650.jpg" alt="" />
+      </div>
+      <div id="tab7" class="tabcontent">
+          <img class="img-fluid" src="Images/hunter-350-motorcycle.jpg" alt="" />
+      </div>
+      <div id="tab8" class="tabcontent">
+        <img class="img-fluid" src="Images/scram-411-home-motorcycle.jpg" alt="" />
+    </div>
+    <div id="tab9" class="tabcontent">
+        <img class="img-fluid" src="Images/classic-350-motorcycle-section.jpg" alt="" />
+    </div>
+    <div id="tab10" class="tabcontent">
+        <img class="img-fluid" src="Images/meteor-350-home-motorcycle.jpg" alt="" />
+    </div>
+</div>
+
+    <!-- <script src="/components/tabnavigation.js"></script> -->
+     <script>
+      function openTab(event, tabId) {
+            var i, tabcontent, tablinks;
+
+            // Hide all tab contents
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove active class from all tab links
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the selected tab content and add active class to the clicked tab link
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.classList.add("active");
+
+            // Store the selected tab ID in localStorage
+            localStorage.setItem("selectedTab", tabId);
+        }
+
+        function loadDefaultTab() {
+            // Get the default tab ID from localStorage or default to "tab1"
+            var defaultTabId = localStorage.getItem("selectedTab") || "tab1";
+
+            // Show the default tab content
+            document.getElementById(defaultTabId).style.display = "block";
+
+            // Add active class to the corresponding tab link
+            var activeTabLink = document.querySelector(".tablinks[data-tab-id='" + defaultTabId + "']");
+            if (activeTabLink) {
+                activeTabLink.classList.add("active");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Load the default tab when the page loads
+            loadDefaultTab();
+        });
+     </script>
+
+    <!-- motorcycles End -->
+  </body>
+  <script  type="module">
+    import swiperHTML from '/components/swiper.js';
+     import navbar_RE from '/components/navbar.js';
+
+    const swipercontainer = document.getElementById('swipercontainer');
+     const navbarContainer = document.getElementById('navbarContainer');
+
+    swipercontainer.innerHTML = swiperHTML();
+     navbarContainer.innerHTML = navbar_RE();
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+</html>
