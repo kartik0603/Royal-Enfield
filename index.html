@@ -1,260 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bikes In India | New Bikes 2024 | Royal Enfield India</title>
-    <link
-      rel="shortcut icon"
-      href="/Images/royalEnfield_logo.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="/bootstrap.min.css" />
-    <script src="/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/styles/swiper.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        overflow-x: hidden;
-        background-color: black;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bikes In India | New Bikes 2024 | Royal Enfield India</title>
+  <link rel="shortcut icon" href="/Images/royalEnfield_logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/bootstrap.min.css" />
+  <script src="/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/styles/swiper.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .RE_news_img {
-        width: 320px;
-        height: auto;
-        margin: 0px;
-        transition: transform 0.3s ease;
-      }
+    body {
+      overflow-x: hidden;
+      background-color: black;
+    }
 
-      .RE_news_img {
-        transform: scale(1.01);
-      }
+    .RE_news_img {
+      width: 320px;
+      height: auto;
+      margin: 0px;
+      transition: transform 0.3s ease;
+    }
 
+    .RE_news_img {
+      transform: scale(1.01);
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
       .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 100%;
-        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
       }
+    }
 
-      @media (max-width: 767px) {
-        .image-container {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
+    /* Container for tab navigation */
+    .tab-container {
+      text-align: center;
+      max-width: 100%;
+      margin: 0 auto;
+    }
 
-      /* Container for tab navigation */
-      .tab-container {
-            text-align: center;
-            max-width: 100%;
-            margin: 0 auto;
-        }
+    .tablinks {
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+      margin: 10px;
+      display: inline-block;
+      border: 1.5px dotted rgb(255, 0, 0);
+      border-radius: 15px;
+    }
 
-        .tablinks {
-            font-size: 16px;
-            font-weight: 600;
-            color: white;
-            padding: 5px;
-            cursor: pointer;
-            margin: 10px;
-            display: inline-block;
-            border: 1.5px dotted rgb(255, 0, 0);
-            border-radius: 15px;
-        }
+    .tablinks.active {
+      color: red;
+      font-size: 18px;
+      font-weight: 600;
+      border: 1.5px dotted white;
+      border-radius: 15px;
+    }
 
-        .tablinks.active {
-            color: red;
-            font-size: 18px;
-            font-weight: 600;
-            border: 1.5px dotted white;
-            border-radius: 15px;
-        }
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      margin-top: -1px;
+    }
+  </style>
+</head>
 
-        .tabcontent {
-            display: none;
-            padding: 20px;
-            margin-top: -1px;
-        }
-    </style>
-  </head>
+<body>
+  <!-- navbar start -->
+  <div id="navbarContainer"></div>
+  <!-- navbar end -->
 
-  <body>
-    <!-- navbar start -->
-    <div id="navbarContainer"></div>
-    <!-- navbar end -->
-   
 
-    <!-- swiper start -->
-    <div id="swipercontainer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- swiper End -->
+  <!-- swiper start -->
+  <div id="swipercontainer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- swiper End -->
 
-    <!-- news_RE_container_start -->
-    <div class="container-fluid">
-      <div
-        style="
+
+
+
+  <!-- news_RE_container_start -->
+  <div class="container-fluid">
+    <div style="
           width: 100vw;
           height: 100%;
           background-color: black;
           display: flex;
           justify-content: center;
           align-items: center;
-        "
-      >
-        <p class="h3 text-white">News And Media</p>
-      </div>
-
-      <div class="image-container">
-        <img class="RE_news_img" src="/Images/RE_news_img_1.jpg" alt="" />
-
-        <img class="RE_news_img" src="/Images/RE_news_img_2.jpg" alt="" />
-
-        <img class="RE_news_img" src="/Images/RE_news_img_3.jpg" alt="" />
-
-        <img class="RE_news_img" src="/Images/RE_news_img_4.jpg" alt="" />
-      </div>
+        ">
+      <p class="h3 text-white">News And Media</p>
     </div>
-    <!-- news_RE_container_End -->
 
-    <!-- motorcycles -->
-    <div
-      style="
+    <div class="image-container">
+      <img class="RE_news_img" src="/Images/RE_news_img_1.jpg" alt="" />
+
+      <img class="RE_news_img" src="/Images/RE_news_img_2.jpg" alt="" />
+
+      <img class="RE_news_img" src="/Images/RE_news_img_3.jpg" alt="" />
+
+      <img class="RE_news_img" src="/Images/RE_news_img_4.jpg" alt="" />
+    </div>
+  </div>
+  <!-- news_RE_container_End -->
+
+
+
+
+
+  <!-- motorcycles -->
+  <div style="
         width: 100vw;
         height: 100%;
         background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
-      "
-    >
-      <p class="h3 text-white">Motorcycles</p>
-    </div>
-    <div class="tab-container">
-      <div class="tablinks" data-tab-id="tab1" onclick="openTab(event, 'tab1')">Shot Gun 650</div>
-      <div class="tablinks" data-tab-id="tab2" onclick="openTab(event, 'tab2')">New Himalayan</div>
-      <div class="tablinks" data-tab-id="tab3" onclick="openTab(event, 'tab3')">Bullet 350</div>
-      <div class="tablinks" data-tab-id="tab4" onclick="openTab(event, 'tab4')">Interceptor</div>
-      <div class="tablinks" data-tab-id="tab5" onclick="openTab(event, 'tab5')">Continental GT</div>
-      <div class="tablinks" data-tab-id="tab6" onclick="openTab(event, 'tab6')">Super Meteor 650</div>
-      <div class="tablinks" data-tab-id="tab7" onclick="openTab(event, 'tab7')">Hunter 350</div>
-      <div class="tablinks" data-tab-id="tab8" onclick="openTab(event, 'tab8')">Scram 411</div>
-      <div class="tablinks" data-tab-id="tab9" onclick="openTab(event, 'tab9')">Classic</div>
-      <div class="tablinks" data-tab-id="tab10" onclick="openTab(event, 'tab10')">Meteor 350</div>
+      ">
+    <p class="h3 text-white">Motorcycles</p>
+  </div>
+  <div class="tab-container" id="motorcycles">
+    <div class="tablinks" data-tab-id="motorcycles-tab1" onclick="openTab(event, 'motorcycles-tab1', 'motorcycles')">
+      Shot Gun 650</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab2" onclick="openTab(event, 'motorcycles-tab2', 'motorcycles')">New
+      Himalayan</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab3" onclick="openTab(event, 'motorcycles-tab3', 'motorcycles')">
+      Bullet 350</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab4" onclick="openTab(event, 'motorcycles-tab4', 'motorcycles')">
+      Interceptor</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab5" onclick="openTab(event, 'motorcycles-tab5', 'motorcycles')">
+      Continental GT</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab6" onclick="openTab(event, 'motorcycles-tab6', 'motorcycles')">
+      Super Meteor 650</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab7" onclick="openTab(event, 'motorcycles-tab7', 'motorcycles')">
+      Hunter 350</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab8" onclick="openTab(event, 'motorcycles-tab8', 'motorcycles')">
+      Scram 411</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab9" onclick="openTab(event, 'motorcycles-tab9', 'motorcycles')">
+      Classic</div>
+    <div class="tablinks" data-tab-id="motorcycles-tab10" onclick="openTab(event, 'motorcycles-tab10', 'motorcycles')">
+      Meteor 350</div>
 
-      <div id="tab1" class="tabcontent">
-          <img class="img-fluid" src="Images/shotgun-650-motorcycle.jpg" alt="" />
-      </div>
-      <div id="tab2" class="tabcontent">
-          <img class="img-fluid" src="Images/himalayan-home-motorcycle.jpg" alt="" />
-      </div>
-      <div id="tab3" class="tabcontent">
-          <img class="img-fluid" src="Images/bullet-350-new.jpg" alt="" />
-      </div>
-      <div id="tab4" class="tabcontent">
-          <img class="img-fluid" src="Images/interceptor_650_motorcycle.jpg" alt="" />
-      </div>
-      <div id="tab5" class="tabcontent">
-          <img class="img-fluid" src="Images/continental_gt_650_motorcycle.jpg" alt="" />
-      </div>
-      <div id="tab6" class="tabcontent">
-          <img class="img-fluid" src="Images/super-meteor-650.jpg" alt="" />
-      </div>
-      <div id="tab7" class="tabcontent">
-          <img class="img-fluid" src="Images/hunter-350-motorcycle.jpg" alt="" />
-      </div>
-      <div id="tab8" class="tabcontent">
-        <img class="img-fluid" src="Images/scram-411-home-motorcycle.jpg" alt="" />
+    <div id="motorcycles-tab1" class="tabcontent">
+      <img class="img-fluid" src="Images/shotgun-650-motorcycle.jpg" alt="Shot Gun 650" />
     </div>
-    <div id="tab9" class="tabcontent">
-        <img class="img-fluid" src="Images/classic-350-motorcycle-section.jpg" alt="" />
+    <div id="motorcycles-tab2" class="tabcontent">
+      <img class="img-fluid" src="Images/himalayan-home-motorcycle.jpg" alt="New Himalayan" />
     </div>
-    <div id="tab10" class="tabcontent">
-        <img class="img-fluid" src="Images/meteor-350-home-motorcycle.jpg" alt="" />
+    <div id="motorcycles-tab3" class="tabcontent">
+      <img class="img-fluid" src="Images/bullet-350-new.jpg" alt="Bullet 350" />
     </div>
+    <div id="motorcycles-tab4" class="tabcontent">
+      <img class="img-fluid" src="Images/interceptor_650_motorcycle.jpg" alt="Interceptor" />
+    </div>
+    <div id="motorcycles-tab5" class="tabcontent">
+      <img class="img-fluid" src="Images/continental_gt_650_motorcycle.jpg" alt="Continental GT" />
+    </div>
+    <div id="motorcycles-tab6" class="tabcontent">
+      <img class="img-fluid" src="Images/super-meteor-650.jpg" alt="Super Meteor 650" />
+    </div>
+    <div id="motorcycles-tab7" class="tabcontent">
+      <img class="img-fluid" src="Images/hunter-350-motorcycle.jpg" alt="Hunter 350" />
+    </div>
+    <div id="motorcycles-tab8" class="tabcontent">
+      <img class="img-fluid" src="Images/scram-411-home-motorcycle.jpg" alt="Scram 411" />
+    </div>
+    <div id="motorcycles-tab9" class="tabcontent">
+      <img class="img-fluid" src="Images/classic-350-motorcycle-section.jpg" alt="Classic" />
+    </div>
+    <div id="motorcycles-tab10" class="tabcontent">
+      <img class="img-fluid" src="Images/meteor-350-home-motorcycle.jpg" alt="Meteor 350" />
+    </div>
+  </div>
+  <script src="/components/tabnavigation.js"></script>
+<!-- motorcycles End -->
+
+
+  <!-- Rides Start -->
+  <div style="
+      width: 100vw;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    ">
+    <p class="h3 text-white">Rides</p>
+  </div>
+  <div class="tab-container" id="rides">
+    <div class="tablinks" data-tab-id="rides-tab1" onclick="openTab(event, 'rides-tab1', 'rides')">GT Cup</div>
+    <div class="tablinks" data-tab-id="rides-tab2" onclick="openTab(event, 'rides-tab2', 'rides')">Himalayan Odyssey
+      2024</div>
+    <div class="tablinks" data-tab-id="rides-tab3" onclick="openTab(event, 'rides-tab3', 'rides')">Rentals</div>
+    <div class="tablinks" data-tab-id="rides-tab4" onclick="openTab(event, 'rides-tab4', 'rides')">Tours</div>
+    <div class="tablinks" data-tab-id="rides-tab5" onclick="openTab(event, 'rides-tab5', 'rides')">Royal Enfield Trail
+      School 2024</div>
+    <div class="tablinks" data-tab-id="rides-tab6" onclick="openTab(event, 'rides-tab6', 'rides')">Track School</div>
+    <div class="tablinks" data-tab-id="rides-tab7" onclick="openTab(event, 'rides-tab7', 'rides')">RE Mapped</div>
+    <div class="tablinks" data-tab-id="rides-tab8" onclick="openTab(event, 'rides-tab8', 'rides')">Leh Rider Support
+    </div>
+
+    <div id="rides-tab1" class="tabcontent">
+      <img class="img-fluid" src="/Images/gt-cup-hero-desc.jpg" alt="GT Cup" />
+    </div>
+    <div id="rides-tab2" class="tabcontent">
+      <img class="img-fluid" src="/Images/himalayan-odyssey-2024.jpg" alt="Himalayan Odyssey 2024" />
+    </div>
+    <div id="rides-tab3" class="tabcontent">
+      <img class="img-fluid" src="/Images/royal-enfield-rentals.jpg" alt="Rentals" />
+    </div>
+    <div id="rides-tab4" class="tabcontent">
+      <img class="img-fluid" src="/Images/royal-enfield-tours.jpg" alt="Tours" />
+    </div>
+    <div id="rides-tab5" class="tabcontent">
+      <img class="img-fluid" src="/Images/royal-enfield-trail-school-2024.jpg" alt="Royal Enfield Trail School 2024" />
+    </div>
+    <div id="rides-tab6" class="tabcontent">
+      <img class="img-fluid" src="/Images/track school royal enfield.jpg" alt="Track School" />
+    </div>
+    <div id="rides-tab7" class="tabcontent">
+      <img class="img-fluid" src="/Images/explore-guide.jpg" alt="RE Mapped" />
+    </div>
+    <div id="rides-tab8" class="tabcontent">
+      <img class="img-fluid" src="Images/leh-rider-support.jpg" alt="Leh Rider Support" />
+    </div>
+  </div>
+  <script src="/components/tabnavigation.js"></script>
+  <!-- Rides End -->
+
+
+<!-- Apparel Start -->
+<div style="
+width: 100vw;
+height: 100%;
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+">
+<p class="h3 text-white">Apparel</p>
 </div>
 
-    <!-- <script src="/components/tabnavigation.js"></script> -->
-     <script>
-      function openTab(event, tabId) {
-            var i, tabcontent, tablinks;
+<div class="tab-container" id="apparel">
+  <div class="tablinks" data-tab-id="apparel-tab1" onclick="openTab(event, 'apparel-tab1', 'apparel')">Shotgun 650</div>
+  <div class="tablinks" data-tab-id="apparel-tab2" onclick="openTab(event, 'apparel-tab2', 'apparel')"> Royal Enfield X Alpinester</div>
+  <div class="tablinks" data-tab-id="apparel-tab3" onclick="openTab(event, 'apparel-tab3', 'apparel')">Royal Enfield X TCX</div>
+  <div class="tablinks" data-tab-id="apparel-tab4" onclick="openTab(event, 'apparel-tab4', 'apparel')">MIY Riding Jacket</div>
 
-            // Hide all tab contents
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
 
-            // Remove active class from all tab links
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
 
-            // Show the selected tab content and add active class to the clicked tab link
-            document.getElementById(tabId).style.display = "block";
-            event.currentTarget.classList.add("active");
+  <div id="apparel-tab1" class="tabcontent">
+    <img class="img-fluid" src="/Images/apparel 1shotgun.jpg" alt=""/>
+  </div>
+  <div id="apparel-tab2" class="tabcontent">
+    <img class="img-fluid" src="/Images/apparel-2 royal-enfield-x-alpinestar.jpg" alt="" />
+  </div>
+  <div id="apparel-tab3" class="tabcontent">
+    <img class="img-fluid" src="/Images/apparel-3 royal-enfield-tcx.jpg" alt="Rentals" />
+  </div>
+  <div id="apparel-tab4" class="tabcontent">
+    <img class="img-fluid" src="/Images/apparel-4 miy-riding-jacket.jpg" alt="Tours" />
+  </div>
+  
+</div>
 
-            // Store the selected tab ID in localStorage
-            localStorage.setItem("selectedTab", tabId);
-        }
+  </div>
+<script src="/components/tabnavigation.js"></script>
+<!-- Apparel End -->
 
-        function loadDefaultTab() {
-            // Get the default tab ID from localStorage or default to "tab1"
-            var defaultTabId = localStorage.getItem("selectedTab") || "tab1";
 
-            // Show the default tab content
-            document.getElementById(defaultTabId).style.display = "block";
+<!-- Accessories start -->
+<div style="
+width: 100vw;
+height: 100%;
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+">
+<p class="h3 text-white">Accessories</p>
+</div>
 
-            // Add active class to the corresponding tab link
-            var activeTabLink = document.querySelector(".tablinks[data-tab-id='" + defaultTabId + "']");
-            if (activeTabLink) {
-                activeTabLink.classList.add("active");
-            }
-        }
+<div class="tab-container" id="Accessories">
+  <div class="tablinks" data-tab-id="Accessories-tab1" onclick="openTab(event, 'Accessories-tab1', 'Accessories')">Shotgun 650</div>
+  <div class="tablinks" data-tab-id="Accessories-tab2" onclick="openTab(event, 'Accessories-tab2', 'Accessories')"> Royal Enfield X Alpinester</div>
+  
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Load the default tab when the page loads
-            loadDefaultTab();
-        });
-     </script>
 
-    <!-- motorcycles End -->
-  </body>
-  <script  type="module">
-    import swiperHTML from '/components/swiper.js';
-     import navbar_RE from '/components/navbar.js';
 
-    const swipercontainer = document.getElementById('swipercontainer');
-     const navbarContainer = document.getElementById('navbarContainer');
+  <div id="Accessories-tab1" class="tabcontent">
+    <img class="img-fluid" src="/Images/accessories 1 shotgun650.jpg" alt=""/>
+  </div>
+  <div id="Accessories-tab2" class="tabcontent">
+    <img class="img-fluid" src="/Images/accessories-2 himalayan-homepage-accessories-miy.jpg" alt="" />
+  </div>
+ 
+  
+</div>
 
-    swipercontainer.innerHTML = swiperHTML();
-     navbarContainer.innerHTML = navbar_RE();
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+  </div>
+<script src="/components/tabnavigation.js"></script>
+<!-- Accessories End -->
+
+
+
+<footer>
+  <div class="container-fluid  d-flex flex-column justify-content-center " style="background-color: rgb(229, 227, 227);">
+    <br>
+    <hr>
+    <div class="row p-5">
+
+
+
+
+      <div class="col-lg-2 col-md-4 col-sm-12  ">
+       <h5 style="font-size: 18px; font-weight: 500;">Motorcycles</h5>
+
+        <p style="font-size: 12px;">Shotgun</p>
+        <p style="font-size: 12px;">New Himalayan</p>
+        <p style="font-size: 12px;">Bullet 350</p>
+        <p style="font-size: 12px;">Super Meteor 650</p>
+        <p style="font-size: 12px;">Hunter 350</p>
+        <p style="font-size: 12px;">Scram 411</p>
+        <p style="font-size: 12px;">Classic 350</p>
+        <p style="font-size: 12px;">Meteor 350</p>
+        <p style="font-size: 12px;">Interceptor 650</p>
+        <p style="font-size: 12px;">Continental GT</p>
+        
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12">
+
+        <h5 style="font-size: 18px; font-weight: 500;">Support</h5>
+
+        <p style="font-size: 12px;">Service Centre</p>
+        <p style="font-size: 12px;">Stores</p>
+        <p style="font-size: 12px;">Owner's Manual</p>
+        <p style="font-size: 12px;">Contact Us</p>
+        <p style="font-size: 12px;">Book A Test Ride</p>
+        <p style="font-size: 12px;">Make It Yours</p>
+        <p style="font-size: 12px;">Beacome a Dealer</p>
+        <p style="font-size: 12px;">Distributor</p>
+
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        <h5 style="font-size: 18px; font-weight: 500;">About Us</h5>
+        <p style="font-size: 12px;">Since 1901</p>
+        <p style="font-size: 12px;">About Eicher Motors</p>
+
+
+
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        <h5 style="font-size: 18px; font-weight: 500;">News & Media</h5>
+
+        <p style="font-size: 12px;">News</p>
+        <p style="font-size: 12px;">Press Realeases</p>
+        <p style="font-size: 12px;">Media Kit</p>
+        <p style="font-size: 12px;">Events</p>
+
+
+
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        <h5 style="font-size: 18px; font-weight: 500;">Careers</h5>
+
+        <p style="font-size: 12px;">Life at Royal Enfield </p>
+        <p style="font-size: 12px;">Careers at Dealership</p>
+        <p style="font-size: 12px;"></p>
+
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        <h5 style="font-size: 18px; font-weight: 500;">Our World</h5>
+
+        <p style="font-size: 12px;">Royal Enfield App</p>
+        <p style="font-size: 12px;">Royal Enfield Tripper</p>
+        <p style="font-size: 12px;">Royal Enfield Tripper Dash</p>
+        <p style="font-size: 12px;">Reown</p>
+        <p style="font-size: 12px;">Goa Garage Cafe</p>
+        <p style="font-size: 12px;">Wallpapers</p>
+        <p style="font-size: 12px;">Forum</p>
+        <p style="font-size: 12px;">Trip Stories</p>
+        <p style="font-size: 12px;"></p>
+
+      </div>
+
+
+
+
+
+    </div>
+    <hr>
+
+    <div class="container-fluid  d-flex  justify-content-between ">
+    <p style="font-size: 10px;"> &#169 2024. Royal Enfield. | *T&C apply. Images shown here may differ from the actual product. </p>
+    <p style="font-size: 10px;">Private Import Policy | Privacy | Terms & Conditions | Cookies |Sitemap</p>
+
+
+      
+    </div>
+
+
+  </div>
+ 
+</footer>
+
+
+
+
+
+
+
+
+</body>
+<script type="module">
+  import swiperHTML from '/components/swiper.js';
+  import navbar_RE from '/components/navbar.js';
+
+  const swipercontainer = document.getElementById('swipercontainer');
+  const navbarContainer = document.getElementById('navbarContainer');
+
+  swipercontainer.innerHTML = swiperHTML();
+  navbarContainer.innerHTML = navbar_RE();
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 </script>
+
 </html>

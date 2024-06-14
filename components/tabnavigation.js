@@ -1,14 +1,15 @@
-function openTab(event, tabId) {
+function openTab(event, tabId, containerId) {
     var i, tabcontent, tablinks;
+    var container = document.getElementById(containerId);
 
-    // Hide all tab contents
-    tabcontent = document.getElementsByClassName("tabcontent");
+    // Hide all tab contents within the current container
+    tabcontent = container.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Remove active class from all tab links
-    tablinks = document.getElementsByClassName("tablinks");
+    // Remove active class from all tab links within the current container
+    tablinks = container.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active");
     }
@@ -17,25 +18,29 @@ function openTab(event, tabId) {
     document.getElementById(tabId).style.display = "block";
     event.currentTarget.classList.add("active");
 
-    // Store the selected tab ID in localStorage
-    localStorage.setItem("selectedTab", tabId);
-}
+    // Store the selected tab ID for the current container in localStorage
+    localStorage.setItem("selectedTab_" + containerId, tabId);
+  }
 
-function loadDefaultTab() {
-    // Get the default tab ID from localStorage or default to "tab1"
-    var defaultTabId = localStorage.getItem("selectedTab") || "tab1";
+  function loadDefaultTab(containerId) {
+    // Get the default tab ID for the current container from localStorage or default to the first tab
+    var defaultTabId = localStorage.getItem("selectedTab_" + containerId) || (containerId + "-tab1");
 
-    // Show the default tab content
+    // Show the default tab content for the current container
     document.getElementById(defaultTabId).style.display = "block";
 
-    // Add active class to the corresponding tab link
-    var activeTabLink = document.querySelector(".tablinks[data-tab-id='" + defaultTabId + "']");
+    // Add active class to the corresponding tab link within the current container
+    var activeTabLink = document.querySelector("#" + containerId + " .tablinks[data-tab-id='" + defaultTabId + "']");
     if (activeTabLink) {
         activeTabLink.classList.add("active");
     }
-}
+  }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Load the default tab when the page loads
-    loadDefaultTab();
-});
+  document.addEventListener("DOMContentLoaded", function() {
+    // Load the default tab for each container when the page loads
+    loadDefaultTab('motorcycles');
+    loadDefaultTab('rides');
+    loadDefaultTab('apparel');
+    loadDefaultTab('Accessories');
+
+  });
