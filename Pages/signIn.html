@@ -1,102 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikes In India | New Bikes 2024 | Royal Enfield India</title>
-    <link rel="shortcut icon" href="/Images/royalEnfield_logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/bootstrap.min.css">
-    <script src="/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/styles/swiper.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="/css form/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="shortcut icon" href="/Images/royalEnfield_logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <script src="/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/styles/swiper.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.css">
+  <link rel="stylesheet" href="/css form/style.css">
 </head>
 <body>
-    <div id="navbarContainer"></div>
-    <div id="swipercontainer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <div class="main">
-        <div class="container bg-black">
-            <div class="signup-content">
-                <div class="signup-img">
-                    <img src="/images copy form/Himalyan.jpg" alt="">
-                </div>
-                <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
-                        <h1>Sign In</h1>
-                        <div class="form-group">
-                            <label for="email">Email ID:</label>
-                            <input type="email" name="email" id="email" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" name="Password" id="password" required />
-                            <span id="Password-msg" class="validation-message"></span>
-                        </div>
-                        <div class="form-submit">
-                            <input type="submit" value="Sign In" class="submit" name="submit" id="submit" />
-                        </div>
-                        <div id="login-message" class="validation-message"></div>
-                    </form>
-                </div>
-            </div>
+  <div id="navbarContainer"></div>
+  <div id="swipercontainer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <div class="main">
+    <div class="container bg-black">
+      <div class="signup-content">
+        <div class="signup-img">
+          <img src="/images copy form/Himalyan.jpg" alt="">
         </div>
+        <div class="signup-form">
+          <form method="POST" class="register-form" id="register-form">
+            <h1>Sign In</h1>
+            <div class="form-group">
+              <label for="email">Email ID:</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="Password" id="password" required />
+              <span id="Password-msg" class="validation-message"></span>
+            </div>
+            <div class="form-submit">
+              <input type="submit" value="Sign In" class="submit" name="submit" id="submit" />
+            </div>
+            <div id="login-message" class="validation-message"></div>
+          </form>
+        </div>
+      </div>
     </div>
-    <div id="footercontainer"></div>
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script>
-        document.getElementById("register-form").addEventListener("submit", handleLogin);
+  </div>
+  <div id="footercontainer"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script>
+    document.getElementById("register-form").addEventListener("submit", handleLogin);
 
-        function handleLogin(event) {
-            event.preventDefault();
-            const users = JSON.parse(localStorage.getItem("users")) || [];
-            const useremail = document.getElementById("email").value;
-            const userpassword = document.getElementById("password").value;
-            const validUser = users.find(user => user.email === useremail && user.password === userpassword);
+    function handleLogin(event) {
+      event.preventDefault();
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const useremail = document.getElementById("email").value;
+      const userpassword = document.getElementById("password").value;
+      const validUser = users.find(user => user.email === useremail && user.password === userpassword);
 
-            if (validUser) {
-                document.getElementById("login-message").innerHTML = "Login Successful";
-                setTimeout(() => {
-                    window.location.href = "/index.html";
-                }, 1000);
-            } else {
-                document.getElementById("login-message").innerHTML = "Invalid User Data";
-                setTimeout(() => {
-                    document.getElementById("login-message").innerHTML = "";
-                }, 3000);
-            }
-        }
-    </script>
-    <script type="module">
-        import swiperHTML from '/components/swiper.js';
-        import navbar_RE from '/components/navbar.js';
-        import footer_RE from '/components/footer.js';
+      if (validUser) {
+        localStorage.setItem("loggedInUser", JSON.stringify(validUser));
+        document.getElementById("login-message").innerHTML = "Login Successful";
+        setTimeout(() => {
+          window.location.href = "/index.html";
+        }, 1000);
+      } else {
+        document.getElementById("login-message").innerHTML = "Invalid Email or Password";
+      }
+    }
+  </script>
+  <script type="module">
+    import swiperHTML from '/components/swiper.js';
+    import navbar_RE from '/components/navbar.js';
+    import footer_RE from '/components/footer.js';
 
-        const swipercontainer = document.getElementById('swipercontainer');
-        const navbarContainer = document.getElementById('navbarContainer');
-        const footercontainer = document.getElementById('footercontainer');
+    const swipercontainer = document.getElementById('swipercontainer');
+    const navbarContainer = document.getElementById('navbarContainer');
+    const footercontainer = document.getElementById('footercontainer');
 
-        swipercontainer.innerHTML = swiperHTML();
-        navbarContainer.innerHTML = navbar_RE();
-        footercontainer.innerHTML = footer_RE();
+    swipercontainer.innerHTML = swiperHTML();
+    navbarContainer.innerHTML = navbar_RE();
+    footercontainer.innerHTML = footer_RE();
 
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>

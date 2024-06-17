@@ -30,6 +30,7 @@ const navbar_RE = () => {
               </ul>
           </div>
       </div>
+      
   </nav> `;
 };
 
