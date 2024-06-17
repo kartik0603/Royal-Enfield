@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="/styles/swiper.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+       <!-- Font Icon -->
+       <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+       <!-- Main css -->
+       <link rel="stylesheet" href="/css form/style.css">
+
+       
 </head>
 
 <body>
@@ -20,10 +27,182 @@
     </div>
     <!-- navbar End -->
 
+
+
+
+
     <!-- swiper start -->
     <div id="swipercontainer"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- swiper End -->
+
+
+    <!-- Sign Up Form Start -->
+<div class="main">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-img">
+                <img src="/images copy form/form img.jpg" alt="">
+            </div>
+            <div class="signup-form">
+                <form method="POST" class="register-form" id="register-form">
+                    <h1> Sign UP</h1>
+                  
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First Name :</label>
+                            <input type="text" name="first_name" id="first_name" required />
+                            <span id="First-name-msg" class="validation-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Last_name">Last Name :</label>
+                            <input type="text" name="Last_name" id="Last_name" required />
+                            <span id="Last-name-msg" class="validation-message"></span>
+                        </div>
+                    </div>
+                    >
+                    <div class="form-group">
+                        <label for="password">Password </label>
+                        <input type="text" name="Password" id="password" required />
+                        <span id="Password-msg" class="validation-message"></span>
+                    </div>
+                  
+                 
+                    <div class="form-group">
+                        <label for="email">Email ID :</label>
+                        <input type="email" name="email" id="email" />
+                        <!-- <span id="name-msg" class="validation-message"></span> -->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="birth_date">DOB :</label>
+                        <input type="date" name="birth_date" id="birth_date">
+                        <!-- <span id="name-msg" class="validation-message"></span> -->
+
+
+                    </div>
+                    <div class="form-group">
+                        <label for="pincode">Pincode :</label>
+                        <input type="number" name="pincode" id="pincode">
+                        <!-- <span id="name-msg" class="validation-message"></span> -->
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intrested_bike">Interested In:</label>
+                        <div class="form-select">
+                            <select name="intrested_bike" id="intrested_bike">
+                                <option value="1"></option>
+                                <option value="2">Continental 650</option>
+                                <option value="3">ShotGUn 650</option>
+                                <option value="4">super Meteor 650</option>
+                                <option value="5">Himalayan</option>
+                                <option value="6">Interceptor</option>
+                                <option value="7">Scram 411</option>
+                                <option value="8">Classic 350</option>
+                                <option value="9">Hunter 350</option>
+                                <option value="10">Meteor 350</option>
+
+
+
+                              
+
+
+
+
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                       
+                        <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                    </div>
+                 
+               
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    <!-- JS form form -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission for validation testing
+    validateForm();
+});
+
+document.querySelector('#register-form').addEventListener("input", validateForm);
+
+function validateForm() {
+    let user = {
+        firstname: document.getElementById('first_name').value,
+        lastname: document.getElementById('Last_name').value,
+        password: document.getElementById('password').value,
+        email: document.getElementById('email').value,
+        birthday: document.getElementById('birth_date').value,
+        pincode: document.getElementById('pincode').value,
+        intrestedbike: document.getElementById('intrested_bike').value
+    };
+
+    const validfirstname = /^[A-Za-z]{1,16}$/;
+    const validlastname = /^[A-Za-z]{1,16}$/;
+    const strongPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!@$%^&*-]).{8,}$/;
+
+    // Validate First Name
+    validateField('first_name', validfirstname, 'First-name-msg');
+
+    // Validate Last Name
+    validateField('Last_name', validlastname, 'Last-name-msg');
+
+    // Validate Password
+    validateField('password', strongPassword, 'Password-msg');
+}
+
+function validateField(fieldId, regex, msgId) {
+    let field = document.getElementById(fieldId);
+    let msg = document.getElementById(msgId);
+
+    if (regex.test(field.value)) {
+        field.style.border = '3px solid yellow';
+        msg.innerHTML = "Valid";
+        msg.classList.add('valid');
+        field.classList.remove('shake');
+    } else {
+        field.style.border = '4px solid red';
+        msg.innerHTML = "Invalid";
+        msg.classList.remove('valid');
+        shakeInput(field);
+    }
+}
+
+function shakeInput(input) {
+    input.classList.remove('shake');
+    setTimeout(() => {
+        input.classList.add('shake');
+    }, 100);
+}
+
+     
+    </script>
+
+
+<!-- Sign Up Form End -->
+
+
+
+
 
          <!-- footer Start -->
 <div id="footercontainer"></div>
