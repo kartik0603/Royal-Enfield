@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.css">
   <link rel="stylesheet" href="/css form/style.css">
 </head>
+
 <body>
   <div id="navbarContainer"></div>
   <div id="swipercontainer"></div>
@@ -47,6 +49,8 @@
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script>
     document.getElementById("register-form").addEventListener("submit", handleLogin);
+    let userdetails = JSON.parse(localStorage.getItem("users"));
+    document.getElementById("navbarContainer").innerHTML = navbar_RE()
 
     function handleLogin(event) {
       event.preventDefault();
@@ -60,6 +64,11 @@
         document.getElementById("login-message").innerHTML = "Login Successful";
         setTimeout(() => {
           window.location.href = "/index.html";
+          localStorage.setItem("isLogin", true);
+          document.getElementById("navbar").innerHTML = navbar_RE("logout", userdetails.email)
+          // document.getElementById("navbar").innerHTML = navbar_RE("logout", userdetails.email)
+
+
         }, 1000);
       } else {
         document.getElementById("login-message").innerHTML = "Invalid Email or Password";
@@ -97,4 +106,5 @@
     });
   </script>
 </body>
+
 </html>
