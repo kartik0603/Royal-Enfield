@@ -9,58 +9,254 @@
     <link rel="stylesheet" href="/bootstrap.min.css">
     <script src="/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/styles/swiper.css" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <!-- navbar start -->
-    <div id="navbarContainer">
 
-    </div>
+    <!-- navbar start -->
+    <div id="navbarContainer"></div>
     <!-- navbar End -->
 
     <!-- swiper start -->
     <div id="swipercontainer"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- swiper End -->
+    <div class="container-fluid mt-5">
+        <p style="display: flex; justify-content: center;align-items: center; font-size: 60px; font-style: italic; font-weight: bolder; color: rgb(218, 41, 28); border: 3px solid rgb(218, 41, 28); background-color: black; ">Motorcycles</p>
+        
+    </div>
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Shotgun 650</p>
+        <div class="row" id="bike-list">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Himalayan</p>
+        <div class="row" id="bike-list2">
+        </div>
+    </div>
 
 
-        <!-- footer Start -->
-<div id="footercontainer"></div>
-<!-- footer End -->
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Bullet 350</p>
+        <div class="row" id="bike-list3">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Super Meteor 650</p>
+        <div class="row" id="bike-list4">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Hunter 350</p>
+        <div class="row" id="bike-list5">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Scram 411</p>
+        <div class="row" id="bike-list6">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Classic 350</p>
+        <div class="row" id="bike-list7">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield Meteor 350</p>
+        <div class="row" id="bike-list8">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield  Interceptor 650</p>
+        <div class="row" id="bike-list9">
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <p class="h1 d-flex justify-content-center fs-1">Royal Enfield  Continental 650</p>
+        <div class="row" id="bike-list10">
+        </div>
+    </div>
+
+    <!-- footer Start -->
+    <div id="footercontainer"></div>
+    <!-- footer End -->
+
+    <script type="module">
+        import navbar_RE from '/components/navbar.js';
+        import swiperHTML from '/components/swiper.js';
+        import footer_RE from '/components/footer.js';
+
+        const swipercontainer = document.getElementById('swipercontainer');
+        const navbarContainer = document.getElementById('navbarContainer');
+        const footercontainer = document.getElementById('footercontainer');
+
+        navbarContainer.innerHTML = navbar_RE();
+        swipercontainer.innerHTML = swiperHTML();
+        footercontainer.innerHTML = footer_RE();
+
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        let userdetails = JSON.parse(localStorage.getItem("users"));
+        let isLogin = localStorage.getItem("isLogin") || false;
+        if (!isLogin) {
+            alert("sign In")
+            window.location.href = "/Pages/signUp.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            updateShoppingPage();
+        });
+
+        function updateShoppingPage() {
+            const bikeList = document.getElementById("bike-list");
+            const bikeList2 = document.getElementById("bike-list2");
+            const bikeList3 = document.getElementById("bike-list3");
+            const bikeList4 = document.getElementById("bike-list4");
+            const bikeList5 = document.getElementById("bike-list5");
+            const bikeList6 = document.getElementById("bike-list6");
+            const bikeList7 = document.getElementById("bike-list7");
+            const bikeList8 = document.getElementById("bike-list8");
+            const bikeList9 = document.getElementById("bike-list9");
+            const bikeList10 = document.getElementById("bike-list10");
 
 
+
+
+
+
+
+
+            const bikes = JSON.parse(localStorage.getItem("bikes")) || [];
+
+            bikeList.innerHTML = "";
+            bikeList2.innerHTML = "";
+            bikeList3.innerHTML = "";
+            bikeList4.innerHTML = "";
+            bikeList5.innerHTML = "";
+            bikeList6.innerHTML = "";
+            bikeList7.innerHTML = "";
+            bikeList8.innerHTML = "";
+            bikeList9.innerHTML = "";
+            bikeList10.innerHTML = "";
+
+
+
+
+
+
+
+            bikes.forEach(bike => {
+                const colDiv = document.createElement("div");
+                colDiv.classList.add("col-lg-6", "col-md-3", "col-sm-12", "mb-4");
+
+                const cardDiv = document.createElement("div");
+                cardDiv.classList.add("card");
+
+                const img = document.createElement("img");
+                img.classList.add("img-fluid", "card-img-top");
+                img.src = bike.image;
+                img.alt = "Product Image";
+
+                const cardBodyDiv = document.createElement("div");
+                cardBodyDiv.classList.add("card-body");
+
+                const titleH4 = document.createElement("h4");
+                titleH4.classList.add("card-title");
+                titleH4.innerText = bike.title;
+
+                const textP = document.createElement("p");
+                textP.classList.add("card-text");
+                textP.innerText = bike.text;
+
+                const priceP = document.createElement("p");
+                priceP.classList.add("card-text", "h5");
+                priceP.innerHTML = bike.price;
+
+                cardBodyDiv.appendChild(titleH4);
+                cardBodyDiv.appendChild(textP);
+                cardBodyDiv.appendChild(priceP);
+
+                const cardFooterDiv = document.createElement("div");
+                cardFooterDiv.classList.add("card-footer", "text-right");
+
+                const buyButton = document.createElement("button");
+                buyButton.classList.add("btn", "btn-success");
+                buyButton.innerText = "Buy Now";
+
+                buyButton.addEventListener("click", function () {
+                    alert(`Thank You For Buying The ${bike.title}.`);
+                    // alert(`Price ${bike.price}.`);
+
+
+                });
+
+                cardFooterDiv.appendChild(buyButton);
+
+                cardDiv.appendChild(img);
+                cardDiv.appendChild(cardBodyDiv);
+                cardDiv.appendChild(cardFooterDiv);
+
+                colDiv.appendChild(cardDiv);
+
+                if (bike.category === "Shotgun 650") {
+                    bikeList.appendChild(colDiv);
+                } else if (bike.category === "Himalayan") {
+                    bikeList2.appendChild(colDiv);
+                }
+                else if (bike.category === "bullet350") {
+                    bikeList3.appendChild(colDiv);
+                }
+                else if (bike.category === "SuperMeteor650") {
+                    bikeList4.appendChild(colDiv);
+                }
+                else if (bike.category === "hunnter350") {
+                    bikeList5.appendChild(colDiv);
+                }
+                else if (bike.category === "scram411") {
+                    bikeList6.appendChild(colDiv);
+                }
+                else if (bike.category === "classic350") {
+                    bikeList7.appendChild(colDiv);
+                }
+                else if (bike.category === "meteor350") {
+                    bikeList8.appendChild(colDiv);
+                }
+                else if (bike.category === "interceptor650") {
+                    bikeList9.appendChild(colDiv);
+                }
+                else if (bike.category === "continental650") {
+                    bikeList10.appendChild(colDiv);
+                }
+               
+                });
+
+        }
+
+    </script>
 </body>
-<script type="module">
-            import swiperHTML from '/components/swiper.js';
-  import navbar_RE from '/components/navbar.js';
-  import footer_RE from '/components/footer.js'
-
-  const swipercontainer = document.getElementById('swipercontainer');
-  const navbarContainer = document.getElementById('navbarContainer');
-  const footercontainer = document.getElementById('footercontainer');
-
-
-  swipercontainer.innerHTML = swiperHTML();
-  navbarContainer.innerHTML = navbar_RE();
-  footercontainer.innerHTML=footer_RE();
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
 
 </html>
