@@ -135,6 +135,8 @@
         });
 
         function updateShoppingPage() {
+
+            
             const bikeList = document.getElementById("bike-list");
             const bikeList2 = document.getElementById("bike-list2");
             const bikeList3 = document.getElementById("bike-list3");
@@ -170,11 +172,9 @@
 
 
 
-
-
             bikes.forEach(bike => {
                 const colDiv = document.createElement("div");
-                colDiv.classList.add("col-lg-6", "col-md-3", "col-sm-12", "mb-4");
+                colDiv.classList.add("col-lg-6", "col-md-4", "col-sm-12", "mb-4");
 
                 const cardDiv = document.createElement("div");
                 cardDiv.classList.add("card");
@@ -193,14 +193,28 @@
 
                 const textP = document.createElement("p");
                 textP.classList.add("card-text");
-                textP.innerText = bike.text;
+                textP.innerHTML = bike.text;
+
+                const ruppe=document.createElement("p");
+                ruppe.classList.add("p");
+                ruppe.innerText=bike.ruppe_symbole;
 
                 const priceP = document.createElement("p");
                 priceP.classList.add("card-text", "h5");
                 priceP.innerHTML = bike.price;
+                // priceP.innerHTML = `₹${parseFloat(bike.price).toLocaleString()}`;
+
+                const exshowroomP=document.createElement("h6");
+                exshowroomP.classList.add("h6");
+                exshowroomP.innerText= bike.ex_showroom;
+
+
 
                 cardBodyDiv.appendChild(titleH4);
                 cardBodyDiv.appendChild(textP);
+                // cardBodyDiv.appendChild(ruppe);
+
+                cardBodyDiv.appendChild(exshowroomP);
                 cardBodyDiv.appendChild(priceP);
 
                 const cardFooterDiv = document.createElement("div");
@@ -209,21 +223,29 @@
                 const buyButton = document.createElement("button");
                 buyButton.classList.add("btn", "btn-success");
                 buyButton.innerText = "Buy Now";
+                
+
+                const addToCartButton = document.createElement("button");
+                addToCartButton.classList.add("btn", "btn-primary", "ml-2");
+                addToCartButton.innerText = "Add to Cart";
 
                 buyButton.addEventListener("click", function () {
-                    alert(`Thank You For Buying The ${bike.title}.`);
-                    // alert(`Price ${bike.price}.`);
+                    alert(`Thank you for buying the ${bike.title}.\n Price: ${bike.price}`);
+                });
 
-
+                addToCartButton.addEventListener("click", function () {
+                    addToCart(bike);
                 });
 
                 cardFooterDiv.appendChild(buyButton);
+                cardFooterDiv.appendChild(addToCartButton);
 
                 cardDiv.appendChild(img);
                 cardDiv.appendChild(cardBodyDiv);
                 cardDiv.appendChild(cardFooterDiv);
 
                 colDiv.appendChild(cardDiv);
+
 
                 if (bike.category === "Shotgun 650") {
                     bikeList.appendChild(colDiv);
@@ -258,10 +280,53 @@
                 });
 
         }
+        function addToCart(bike) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const existingItem = cartItems.find(item => item.title === bike.title);
 
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                bike.quantity = 1;
+                cartItems.push(bike);
+            }
+
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            alert(`${bike.title} has been added to your cart.`);
+        }
     </script>
 </body>
 
 </html>
 
-interceptor650
+<!-- if (bike.category === "Shotgun 650") {
+    bikeList.appendChild(colDiv);
+} else if (bike.category === "Himalayan") {
+    bikeList2.appendChild(colDiv);
+}
+else if (bike.category === "bullet350") {
+    bikeList3.appendChild(colDiv);
+}
+else if (bike.category === "SuperMeteor650") {
+    bikeList4.appendChild(colDiv);
+}
+else if (bike.category === "hunnter350") {
+    bikeList5.appendChild(colDiv);
+}
+else if (bike.category === "scram411") {
+    bikeList6.appendChild(colDiv);
+}
+else if (bike.category === "classic350") {
+    bikeList7.appendChild(colDiv);
+}
+else if (bike.category === "meteor350") {
+    bikeList8.appendChild(colDiv);
+}
+else if (bike.category === "interceptor650") {
+    bikeList9.appendChild(colDiv);
+}
+else if (bike.category === "continental650") {
+    bikeList10.appendChild(colDiv);
+}
+
+}); -->

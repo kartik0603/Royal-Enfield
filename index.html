@@ -87,20 +87,16 @@
   <!-- navbar start -->
   <div id="navbarContainer"></div>
   <!-- navbar end -->
+
     <script>
       let userdetails = JSON.parse(localStorage.getItem("users"));
       let isLogin = localStorage.getItem("isLogin") || false;
 if (!isLogin) {
-  alert("sign In")
+  alert(" Please sign In")
     window.location.href = "/Pages/signUp.html";
 
 }
-// if (userdetails) {
-//     document.getElementById("navbarContainer").innerHTML = navbar_RE("logout", userdetails.email)
-// }
-// else {
-//     document.getElementById("navbarContainer").innerHTML = navbar_RE();
-// }
+
     </script>
    
 
