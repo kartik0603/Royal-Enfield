@@ -31,17 +31,18 @@ const navbar_RE = () => {
                   <a class="nav-link" style="font-size: 16px; font-weight: 600; color: white;" href="/Pages/cart.html">Cart</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            
          
-              <input id="searchValue" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  >
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+          <form id="searchForm" class="d-flex" role="search">
+            <input id="searchValue" data-search class="form-control me-2" type="search" placeholder="Bike Eg:- Classic 350" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         </div>
 
        
        
     
-</nav> `
+</nav> `;
 };
 
 export default navbar_RE;

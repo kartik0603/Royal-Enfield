@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="/styles/swiper.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+<style>
+    .hide{
+        display: none;
+    }
+</style>
 
 <body>
 
@@ -1134,6 +1139,30 @@
                 bikes = bikes.filter(bike => bike.title !== title);
                 localStorage.setItem("bikes", JSON.stringify(bikes));
                 alert(`${title} Removed from Shopping page`);
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchForm = document.getElementById("searchForm");
+            const searchInput = document.querySelector("[data-search]");
+            const cards = document.querySelectorAll(".card");
+
+            const performSearch = (searchTerm) => {
+                searchTerm = searchTerm.toLowerCase();
+                cards.forEach(card => {
+                    const isVisible = card.dataset.category.toLowerCase().includes(searchTerm);
+                    card.classList.toggle("hide", !isVisible);
+                });
+            };
+
+            searchForm.addEventListener("submit", e => {
+                e.preventDefault();
+                performSearch(searchInput.value);
+            });
+
+            searchInput.addEventListener("input", () => {
+                performSearch(searchInput.value);
             });
         });
     </script>
