@@ -149,10 +149,15 @@
             totalPriceElement.innerHTML = `Total Price: ₹${totalPrice.toLocaleString()}`;
 
             buyButton.addEventListener("click", function () {
-                let itemsList = cartItems.map(item => `${item.quantity} ${item.title}`).join(", ");
-                alert(`You are Buying:\n${itemsList}\n \n Total Price: ₹${totalPrice.toLocaleString()}`);
-            });
+    let itemsList = cartItems.map(item => `${item.quantity} ${item.title}`).join(", ");
+    alert(`You are Buying:\n${itemsList}\n \n Total Price: ₹${totalPrice.toLocaleString()}`);
+    localStorage.removeItem("cartItems");
+    updateCartPage();
+    cartItems = []; 
+});
         }
     </script>
 </body>
 </html>
+
+
