@@ -88,17 +88,20 @@
   <div id="navbarContainer"></div>
   <!-- navbar end -->
 
-    <script>
-      let userdetails = JSON.parse(localStorage.getItem("users"));
-      let isLogin = localStorage.getItem("isLogin") || false;
-if (!isLogin) {
-  alert(" Please sign In")
-    window.location.href = "/Pages/signUp.html";
+  <script>
+    let userdetails = JSON.parse(localStorage.getItem("users"));
+    let isLogin = localStorage.getItem("isLogin") || false;
+    if (!isLogin) {
+      alert(" Please sign In")
+      window.location.href = "/Pages/signUp.html";
 
-}
+    }
+    else{
+      // window.location.href = "/Pages/siginIn.html";
+    }
 
-    </script>
-   
+  </script>
+
 
 
   <!-- swiper start -->
@@ -203,7 +206,7 @@ if (!isLogin) {
     </div>
   </div>
   <script src="/components/tabnavigation.js"></script>
-<!-- motorcycles End -->
+  <!-- motorcycles End -->
 
 
   <!-- Rides Start -->
@@ -259,8 +262,8 @@ if (!isLogin) {
   <!-- Rides End -->
 
 
-<!-- Apparel Start -->
-<div style="
+  <!-- Apparel Start -->
+  <div style="
 width: 100vw;
 height: 100%;
 background-color: black;
@@ -268,39 +271,43 @@ display: flex;
 justify-content: center;
 align-items: center;
 ">
-<p class="h3 text-white">Apparel</p>
-</div>
-
-<div class="tab-container" id="apparel">
-  <div class="tablinks" data-tab-id="apparel-tab1" onclick="openTab(event, 'apparel-tab1', 'apparel')">Shotgun 650</div>
-  <div class="tablinks" data-tab-id="apparel-tab2" onclick="openTab(event, 'apparel-tab2', 'apparel')"> Royal Enfield X Alpinester</div>
-  <div class="tablinks" data-tab-id="apparel-tab3" onclick="openTab(event, 'apparel-tab3', 'apparel')">Royal Enfield X TCX</div>
-  <div class="tablinks" data-tab-id="apparel-tab4" onclick="openTab(event, 'apparel-tab4', 'apparel')">MIY Riding Jacket</div>
-
-
-
-  <div id="apparel-tab1" class="tabcontent">
-    <img class="img-fluid" src="/Images/apparel 1shotgun.jpg" alt=""/>
+    <p class="h3 text-white">Apparel</p>
   </div>
-  <div id="apparel-tab2" class="tabcontent">
-    <img class="img-fluid" src="/Images/apparel-2 royal-enfield-x-alpinestar.jpg" alt="" />
-  </div>
-  <div id="apparel-tab3" class="tabcontent">
-    <img class="img-fluid" src="/Images/apparel-3 royal-enfield-tcx.jpg" alt="Rentals" />
-  </div>
-  <div id="apparel-tab4" class="tabcontent">
-    <img class="img-fluid" src="/Images/apparel-4 miy-riding-jacket.jpg" alt="Tours" />
-  </div>
-  
-</div>
 
-  </div>
-<script src="/components/tabnavigation.js"></script>
-<!-- Apparel End -->
+  <div class="tab-container" id="apparel">
+    <div class="tablinks" data-tab-id="apparel-tab1" onclick="openTab(event, 'apparel-tab1', 'apparel')">Shotgun 650
+    </div>
+    <div class="tablinks" data-tab-id="apparel-tab2" onclick="openTab(event, 'apparel-tab2', 'apparel')"> Royal Enfield
+      X Alpinester</div>
+    <div class="tablinks" data-tab-id="apparel-tab3" onclick="openTab(event, 'apparel-tab3', 'apparel')">Royal Enfield X
+      TCX</div>
+    <div class="tablinks" data-tab-id="apparel-tab4" onclick="openTab(event, 'apparel-tab4', 'apparel')">MIY Riding
+      Jacket</div>
 
 
-<!-- Accessories start -->
-<div style="
+
+    <div id="apparel-tab1" class="tabcontent">
+      <img class="img-fluid" src="/Images/apparel 1shotgun.jpg" alt="" />
+    </div>
+    <div id="apparel-tab2" class="tabcontent">
+      <img class="img-fluid" src="/Images/apparel-2 royal-enfield-x-alpinestar.jpg" alt="" />
+    </div>
+    <div id="apparel-tab3" class="tabcontent">
+      <img class="img-fluid" src="/Images/apparel-3 royal-enfield-tcx.jpg" alt="Rentals" />
+    </div>
+    <div id="apparel-tab4" class="tabcontent">
+      <img class="img-fluid" src="/Images/apparel-4 miy-riding-jacket.jpg" alt="Tours" />
+    </div>
+
+  </div>
+
+  </div>
+  <script src="/components/tabnavigation.js"></script>
+  <!-- Apparel End -->
+
+
+  <!-- Accessories start -->
+  <div style="
 width: 100vw;
 height: 100%;
 background-color: black;
@@ -308,34 +315,36 @@ display: flex;
 justify-content: center;
 align-items: center;
 ">
-<p class="h3 text-white">Accessories</p>
-</div>
-
-<div class="tab-container" id="Accessories">
-  <div class="tablinks" data-tab-id="Accessories-tab1" onclick="openTab(event, 'Accessories-tab1', 'Accessories')">Shotgun 650</div>
-  <div class="tablinks" data-tab-id="Accessories-tab2" onclick="openTab(event, 'Accessories-tab2', 'Accessories')"> Royal Enfield X Alpinester</div>
-  
-
-
-
-  <div id="Accessories-tab1" class="tabcontent">
-    <img class="img-fluid" src="/Images/accessories 1 shotgun650.jpg" alt=""/>
+    <p class="h3 text-white">Accessories</p>
   </div>
-  <div id="Accessories-tab2" class="tabcontent">
-    <img class="img-fluid" src="/Images/accessories-2 himalayan-homepage-accessories-miy.jpg" alt="" />
+
+  <div class="tab-container" id="Accessories">
+    <div class="tablinks" data-tab-id="Accessories-tab1" onclick="openTab(event, 'Accessories-tab1', 'Accessories')">
+      Shotgun 650</div>
+    <div class="tablinks" data-tab-id="Accessories-tab2" onclick="openTab(event, 'Accessories-tab2', 'Accessories')">
+      Royal Enfield X Alpinester</div>
+
+
+
+
+    <div id="Accessories-tab1" class="tabcontent">
+      <img class="img-fluid" src="/Images/accessories 1 shotgun650.jpg" alt="" />
+    </div>
+    <div id="Accessories-tab2" class="tabcontent">
+      <img class="img-fluid" src="/Images/accessories-2 himalayan-homepage-accessories-miy.jpg" alt="" />
+    </div>
+
+
   </div>
- 
-  
-</div>
 
-</div>
-<script src="/components/tabnavigation.js"></script>
-<!-- Accessories End -->
+  </div>
+  <script src="/components/tabnavigation.js"></script>
+  <!-- Accessories End -->
 
 
-<!-- footer Start -->
-<div id="footercontainer"></div>
-<!-- footer End -->
+  <!-- footer Start -->
+  <div id="footercontainer"></div>
+  <!-- footer End -->
 
 
 
@@ -358,7 +367,7 @@ align-items: center;
 
   swipercontainer.innerHTML = swiperHTML();
   navbarContainer.innerHTML = navbar_RE();
-  footercontainer.innerHTML=footer_RE();
+  footercontainer.innerHTML = footer_RE();
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     centeredSlides: true,
@@ -377,7 +386,7 @@ align-items: center;
   });
 
 
-  
+
 </script>
 
 </html>
