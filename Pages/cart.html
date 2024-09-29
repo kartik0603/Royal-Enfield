@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="navbarContainer"></div>
 
@@ -46,6 +48,13 @@
         document.addEventListener("DOMContentLoaded", function () {
             updateCartPage();
         });
+
+        let userdetails = JSON.parse(localStorage.getItem("users"));
+        let isLogin = localStorage.getItem("isLogin") || false;
+        if (!isLogin) {
+            alert("sign In")
+            window.location.href = "/Pages/signUp.html";
+        }
 
         function updateCartPage() {
             const cartItemsContainer = document.getElementById("cart-items");
@@ -149,15 +158,14 @@
             totalPriceElement.innerHTML = `Total Price: ₹${totalPrice.toLocaleString()}`;
 
             buyButton.addEventListener("click", function () {
-    let itemsList = cartItems.map(item => `${item.quantity} ${item.title}`).join(", ");
-    alert(`You are Buying:\n${itemsList}\n \n Total Price: ₹${totalPrice.toLocaleString()}`);
-    localStorage.removeItem("cartItems");
-    updateCartPage();
-    cartItems = []; 
-});
+                let itemsList = cartItems.map(item => `${item.quantity} ${item.title}`).join(", ");
+                alert(`You are Buying:\n${itemsList}\n \n Total Price: ₹${totalPrice.toLocaleString()}`);
+                localStorage.removeItem("cartItems");
+                updateCartPage();
+                cartItems = [];
+            });
         }
     </script>
 </body>
+
 </html>
-
-
